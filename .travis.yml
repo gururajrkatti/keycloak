@@ -13,19 +13,20 @@ env:
     - MAVEN_SKIP_RC=true
     - MAVEN_OPTS="-Xms512m -Xmx1536m"
   matrix:
-    include:
-     - env: TESTS=unit
-     - env: TESTS=server-group1
-     - env: TESTS=server-group2
-     - env: TESTS=server-group3
-     - env: TESTS=server-group4
-     - env: TESTS=adapter-tests
-     - env: TESTS=adapter-tests-authz
-     - env: TESTS=crossdc-server
-     - env: TESTS=crossdc-adapter
-     - env: TESTS=broker
-     - env: TESTS=unit
-       arch: ppc64le
+     - TESTS=unit
+     - TESTS=server-group1
+     - TESTS=server-group2
+     - TESTS=server-group3
+     - TESTS=server-group4
+     - TESTS=adapter-tests
+     - TESTS=adapter-tests-authz
+     - TESTS=crossdc-server
+     - TESTS=crossdc-adapter
+     - TESTS=broker
+matrix:
+  include:
+    - arch: ppc64le
+      env: TESTS=unit
 
 jdk:
   - openjdk8
