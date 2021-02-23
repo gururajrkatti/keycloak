@@ -47,6 +47,7 @@ before_install:
   # else
       - sudo apt update ;
       - sudo apt install -y phantomjs ;
+      - export QT_QPA_PLATFORM=offscreen
       - phantomjs --version ;
    #fi
 
