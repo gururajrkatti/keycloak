@@ -13,7 +13,7 @@ env:
     - MAVEN_SKIP_RC=true
     - MAVEN_OPTS="-Xms512m -Xmx1536m"
   matrix:
-    incliude:
+    include:
     - env: TESTS=unit
     - env: TESTS=server-group1
     - env: TESTS=server-group2
