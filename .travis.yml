@@ -14,15 +14,15 @@ env:
     - MAVEN_OPTS="-Xms512m -Xmx1536m"
   matrix:
      - TESTS=unit
-     - TESTS=server-group1
-     - TESTS=server-group2
-     - TESTS=server-group3
-     - TESTS=server-group4
-     - TESTS=adapter-tests
-     - TESTS=adapter-tests-authz
-     - TESTS=crossdc-server
-     - TESTS=crossdc-adapter
-     - TESTS=broker
+  #   - TESTS=server-group1
+  #   - TESTS=server-group2
+  #   - TESTS=server-group3
+  #   - TESTS=server-group4
+  #   - TESTS=adapter-tests
+  #   - TESTS=adapter-tests-authz
+  #   - TESTS=crossdc-server
+  #   - TESTS=crossdc-adapter
+  #   - TESTS=broker
 matrix:
   include:
     - arch: ppc64le
@@ -34,17 +34,17 @@ jdk:
 install: true
 
 before_install:
-  #- |
-  #  if [[ $TRAVIS_CPU_ARCH != ppc64le ]]; then
-  #    "export PHANTOMJS_VERSION=2.1.1";
-  #    "phantomjs --version";
-  #    "export PATH=$PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64/bin:$PATH";
-  #    "phantomjs --version";
-  #    "if [ $(phantomjs --version) != '$PHANTOMJS_VERSION' ]; then rm -rf $PWD/travis_phantomjs; mkdir -p $PWD/travis_phantomjs; fi"
-  #    "if [ $(phantomjs --version) != '$PHANTOMJS_VERSION' ]; then wget https://github.com/Medium/phantomjs/releases/download/v$PHANTOMJS_VERSION/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -O $PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2; fi"
-  #    "if [ $(phantomjs --version) != '$PHANTOMJS_VERSION' ]; then tar -xvf $PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -C $PWD/travis_phantomjs; fi"
-  #    phantomjs --version;
-  # else
+  - |
+    if [[ $TRAVIS_CPU_ARCH != ppc64le ]]; then
+      "export PHANTOMJS_VERSION=2.1.1";
+      "phantomjs --version";
+      "export PATH=$PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64/bin:$PATH";
+      "phantomjs --version";
+      "if [ $(phantomjs --version) != '$PHANTOMJS_VERSION' ]; then rm -rf $PWD/travis_phantomjs; mkdir -p $PWD/travis_phantomjs; fi"
+      "if [ $(phantomjs --version) != '$PHANTOMJS_VERSION' ]; then wget https://github.com/Medium/phantomjs/releases/download/v$PHANTOMJS_VERSION/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -O $PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2; fi"
+      "if [ $(phantomjs --version) != '$PHANTOMJS_VERSION' ]; then tar -xvf $PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -C $PWD/travis_phantomjs; fi"
+      phantomjs --version;
+   else
       - sudo apt update ;
       - sudo apt install -y phantomjs ;
       - export QT_QPA_PLATFORM=offscreen
