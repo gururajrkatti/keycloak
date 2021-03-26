@@ -49,7 +49,7 @@ before_install:
       - sudo apt install -y phantomjs ;
       - export QT_QPA_PLATFORM=offscreen
       - phantomjs --version ;
-   #fi
+   fi
 
 before_script:
   - export -f travis_fold
