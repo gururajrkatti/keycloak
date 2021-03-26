@@ -45,10 +45,10 @@ before_install:
       "if [ $(phantomjs --version) != '$PHANTOMJS_VERSION' ]; then tar -xvf $PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -C $PWD/travis_phantomjs; fi"
       phantomjs --version;
    else
-      - sudo apt update ;
-      - sudo apt install -y phantomjs ;
-      - export QT_QPA_PLATFORM=offscreen
-      - phantomjs --version ;
+      sudo apt update ;
+      sudo apt install -y phantomjs ;
+      export QT_QPA_PLATFORM=offscreen
+      phantomjs --version ;
    fi
 
 before_script:
