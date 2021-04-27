@@ -26,17 +26,17 @@ env:
 matrix:
   include:
     - arch: ppc64le
-      env: TESTS=server-group1
+      env: TESTS=server-group3
     - arch: ppc64le
-      env: TESTS=server-group2
+      env: TESTS=server-group4
     - arch: ppc64le
       env: TESTS=unit
     - arch: amd64
       env: TESTS=unit
     - arch: amd64
-      env: TESTS=server-group1
+      env: TESTS=server-group3
     - arch: amd64
-      env: TESTS=server-group2
+      env: TESTS=server-group4
 
 jdk:
   - openjdk8
