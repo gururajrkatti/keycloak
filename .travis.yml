@@ -12,10 +12,10 @@ env:
   global:
     - MAVEN_SKIP_RC=true
     - MAVEN_OPTS="-Xms512m -Xmx1536m"
-  matrix:
-     - TESTS=unit
-     - TESTS=server-group1
-     - TESTS=server-group2
+  #matrix:
+  #   - TESTS=unit
+  #   - TESTS=server-group1
+  #   - TESTS=server-group2
   #   - TESTS=server-group3
   #   - TESTS=server-group4
   #   - TESTS=adapter-tests
@@ -26,9 +26,17 @@ env:
 matrix:
   include:
     - arch: ppc64le
+      env: TESTS=server-group1
+    - arch: ppc64le
+      env: TESTS=server-group2
+    - arch: ppc64le
       env: TESTS=unit
     - arch: amd64
       env: TESTS=unit
+    - arch: amd64
+      env: TESTS=server-group1
+    - arch: amd64
+      env: TESTS=server-group2
 
 jdk:
   - openjdk8
