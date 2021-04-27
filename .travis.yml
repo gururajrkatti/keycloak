@@ -14,8 +14,8 @@ env:
     - MAVEN_OPTS="-Xms512m -Xmx1536m"
   matrix:
      - TESTS=unit
-  #   - TESTS=server-group1
-  #   - TESTS=server-group2
+     - TESTS=server-group1
+     - TESTS=server-group2
   #   - TESTS=server-group3
   #   - TESTS=server-group4
   #   - TESTS=adapter-tests
