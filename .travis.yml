@@ -26,17 +26,17 @@ env:
 matrix:
   include:
     - arch: ppc64le
-      env: TESTS=server-group3
+      env: TESTS=adapter-tests
     - arch: ppc64le
-      env: TESTS=server-group4
+      env: TESTS=adapter-tests-authz
     - arch: ppc64le
       env: TESTS=unit
     - arch: amd64
       env: TESTS=unit
     - arch: amd64
-      env: TESTS=server-group3
+      env: TESTS=adapter-tests
     - arch: amd64
-      env: TESTS=server-group4
+      env: TESTS=adapter-tests-authz
 
 jdk:
   - openjdk8
