@@ -26,17 +26,21 @@ env:
 matrix:
   include:
     - arch: ppc64le
-      env: TESTS=adapter-tests
+      env: TESTS=crossdc-server
     - arch: ppc64le
-      env: TESTS=adapter-tests-authz
+      env: TESTS=crossdc-adapter
+    - arch: ppc64le
+      env: TESTS=broker
     - arch: ppc64le
       env: TESTS=unit
     - arch: amd64
       env: TESTS=unit
     - arch: amd64
-      env: TESTS=adapter-tests
+      env: TESTS=crossdc-server
     - arch: amd64
-      env: TESTS=adapter-tests-authz
+      env: TESTS=crossdc-adapter
+    - arch: amd64
+      env: TESTS=broker
 
 jdk:
   - openjdk8
